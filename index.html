@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0070)https://bit.webduino.io/blockly/live-preview.html#-MjEMKBaZW80Hy9JDCyc -->
+<!-- saved from url=(0070)https://bit.webduino.io/blockly/live-preview.html#-MjEZdpFHb21MG8qLszf -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Webduino Blockly Demo 02</title>
+  <title>Webduino Blockly Demo 05</title>
   <script src="./index_files/jquery.min.js.下載"></script>
   <script src="./index_files/webduino-all.min.js.下載"></script>
   <script src="./index_files/MessageTransport.min.js.下載"></script>
@@ -11,28 +11,24 @@
   <script src="./index_files/firebase.min.js.下載"></script>
   <script src="./index_files/runtime.min.js.下載"></script><script src="./index_files/BitLedMatrix-blockly.js.下載"></script><script src="./index_files/BitLedMatrix.js.下載"></script>
 
-  <style>#demo-area-02-light img {
-  height: 200px;
-  display: none;
+  <style>.db5 {
+  font-size: 24px;
+  outline: none;
+  margin: 0 10px 10px 0;
   pointer-events: auto!important;
 }
 
-#demo-area-02-light.on #demo-area-02-on {
-  display: inline-block;
-  pointer-events: auto!important;
-}
-
-#demo-area-02-light.off #demo-area-02-off {
-  display: inline-block;
-  pointer-events: auto!important;
+button:hover {
+  box-shadow: 2px 2px 5px #888;
 }</style>
 </head>
 
 <body>
-  <div><div id="demo-area-02-light" class="off">
-    <img src="https://d32kak7w9u5ewj.cloudfront.net/media/image/2018/11/2e6888eb9fb4481d936af71854b55f66.jpg" id="demo-area-02-off">
-    <img src="https://yt3.ggpht.com/ytc/AKedOLTYSFvJjxDxu5788j7BoaTc5WRZvziivI1SYTLz=s900-c-k-c0x00ffffff-no-rj" id="demo-area-02-on">
-  </div></div>
+  <div><button id="demo-area-05-btn1" class="db5">按鈕 1</button>
+  <button id="demo-area-05-btn2" class="db5">按鈕 2</button>
+  <button id="demo-area-05-btn3" class="db5">按鈕 3</button>
+  <button id="demo-area-05-btn4" class="db5">按鈕 4</button>
+  <button id="demo-area-05-btn5" class="db5">按鈕 5</button></div>
 
   <script>var matrix;
 
@@ -40,18 +36,11 @@
 boardReady({board: 'Bit', device: 'nNECRCwdCapFyXcpb', transport: 'mqtt'}, function (board) {
   board.samplingInterval = 250;
   matrix = getMatrix(board, 4, 25);
-  document.getElementById("demo-area-02-light").addEventListener("click", function(){
-    if (document.getElementById("demo-area-02-light").className == "on") {
-       document.getElementById("demo-area-02-light").className = "off";
-    } else {
-      document.getElementById("demo-area-02-light").className = "on";
-    }
-    if (document.getElementById("demo-area-02-light").className == "on") {
-      matrix.setColor('#ff0000');
-    }
-    if (document.getElementById("demo-area-02-light").className == "off") {
-      matrix.setColor('#33ff33');
-    }
+  document.getElementById("demo-area-05-btn1").addEventListener("click",function(){
+    matrix.setColor('#ff0000');
+  });
+  document.getElementById("demo-area-05-btn2").addEventListener("click",function(){
+    matrix.setColor('#33ff33');
   });
 });
 </script>
